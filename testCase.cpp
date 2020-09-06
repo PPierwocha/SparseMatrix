@@ -1,6 +1,6 @@
 #include "Sparse.h"
-#include "Sparse.cpp"
-//#include <iostream>
+// #include "Sparse.cpp"
+#include <iostream>
 
 
 
@@ -12,31 +12,39 @@ int main()
 
 
     
+    // Sparse<double> sparseMatrix(3);
     Sparse sparseMatrix(3);
 
     std::vector<double> rowVal_1{1.0, -1.0};
     std::vector<int> rowCol_1{0, 1};
-
-    
+///////////////////////////////////////////
+//// sparse row test
+    SparseRow<double> sparse_row;
+    sparse_row.columns  = rowCol_1;
+    sparse_row.values = rowVal_1;
+    std::cout << "Sparse row test passed" << std::endl;
+/////////////////////////////////
+/// setting first row
     sparseMatrix.setRow(0, rowVal_1, rowCol_1);
+    std::cout << "First row set -> test passed" << std::endl;
+////////////////////////////////////
+    // std::vector<double> rowVal_2{-1.0, 1.0};
+    // std::vector<int> rowCol_2{1, 2};
 
-    std::vector<double> rowVal_2{-1.0, 1.0};
-    std::vector<int> rowCol_2{1, 2};
-
-    sparseMatrix.setRow(1, rowVal_2, rowCol_2);
-
-    
-
-    sparseMatrix.setRow(2, 1.0, 2);
+    // sparseMatrix.setRow(1, rowVal_2, rowCol_2);
 
     
 
-    vec_2 = sparseMatrix*vec_1;
+    // sparseMatrix.setRow(2, 1.0, 2);
+
     
-    for(int i = 0; i < vec_2.size(); i++)
-    {
-        std::cout<<vec_2[i]<<std::endl;
-    }
+
+    // vec_2 = sparseMatrix*vec_1;
+    
+    // for(int i = 0; i < vec_2.size(); i++)
+    // {
+    //     std::cout<<vec_2[i]<<std::endl;
+    // }
 
     
     
