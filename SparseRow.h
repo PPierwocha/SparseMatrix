@@ -2,9 +2,9 @@
 
 
 
-
+template <typename T>
 struct SparseRow
 {
-    std::vector<double> values;
+    std::vector<T> values;
     std::vector<int> columns;
 };

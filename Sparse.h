@@ -9,7 +9,7 @@
 class Sparse
 {
     private:
-        std::vector<SparseRow> sparse_;
+        std::vector<SparseRow<double>> sparse_;
         int sparseSize_;
 
     public:
