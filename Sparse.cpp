@@ -57,15 +57,19 @@ void Sparse<T>::printMatrix()
 {
     bool is_present;
     int col_ind_sp = 0;
+    std::vector<int>::iterator ptr;
 
     for(int row_ind = 0; row_ind < sparseSize_; row_ind++)
     {
         for(int col_ind = 0; col_ind < sparseSize_; col_ind++)
         {
-            is_present = std::find(sparse_[row_ind].columns.begin(), sparse_[row_ind].columns.end(), col_ind) != sparse_[row_ind].columns.end();
+            ptr = std::find(sparse_[row_ind].columns.begin(), sparse_[row_ind].columns.end(), col_ind);
+            
+            is_present = ptr != sparse_[row_ind].columns.end();
             
             if(is_present)
             {
+                
                 std::cout << sparse_[row_ind].values[col_ind_sp] << "\t";
                 col_ind_sp++;
             }
