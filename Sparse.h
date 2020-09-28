@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #include "SparseRow.h"
 
 
@@ -30,5 +31,8 @@ class Sparse
 
 
         void setRow(int rowNum, T const& valueTmp, int columnTmp);
+
+
+        void printMatrix();
 
 };
