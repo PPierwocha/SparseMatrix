@@ -5,11 +5,11 @@
 
 
 
-
+template <typename T>
 class Sparse
 {
     private:
-        std::vector<SparseRow<double>> sparse_;
+        std::vector<SparseRow<T>> sparse_;
         int sparseSize_;
 
     public:
@@ -24,11 +24,11 @@ class Sparse
 
         ~Sparse(){};
 
-        std::vector<double> operator * (const std::vector<double> & vec);
+        std::vector<T> operator * (std::vector<T> const& vec);
 
-        void setRow(int rowNum, const std::vector<double> valuesTmp, const std::vector<int> columnsTmp);
+        void setRow(int rowNum, std::vector<T> const& valuesTmp, const std::vector<int> columnsTmp);
 
 
-        void setRow(int rowNum, double valueTmp, int columnTmp);
+        void setRow(int rowNum, T const& valueTmp, int columnTmp);
 
 };
