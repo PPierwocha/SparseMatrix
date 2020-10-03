@@ -39,8 +39,10 @@ class Sparse
         ~Sparse(){};
 
         std::vector<T> operator * (std::vector<T> const& vec);
-
         Sparse<T> operator+ (Sparse<T> const& matrix);
+        Sparse<T> operator- (Sparse<T> const& matrix);
+        Sparse<T>& operator= (const Sparse<T>& other);
+        
 
         void setRow(int rowNum, const std::vector<int> columnsTmp, std::vector<T> const& valuesTmp);
 
